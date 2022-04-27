@@ -10,15 +10,15 @@
         android:id="@+id/billAmountTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
         android:layout_marginStart="@dimen/standard_horizontal_margin"
         android:text="Bill:"
+        android:textAlignment="center"
         android:textSize="@dimen/normal_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/billAmountEditText"
-        app:layout_constraintEnd_toStartOf="@id/barrier2"
+        app:layout_constraintEnd_toStartOf="@id/titlesGuideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/billAmountEditText" />
+        app:layout_constraintTop_toTopOf="@id/billAmountEditText"/>
 
     <EditText
         android:id="@+id/billAmountEditText"
@@ -27,33 +27,32 @@
         android:layout_marginStart="@dimen/standard_horizontal_margin"
         android:layout_marginTop="@dimen/standard_vertical_margin"
         android:layout_marginEnd="@dimen/standard_horizontal_margin"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/billAmountTitle"
+        app:layout_constraintStart_toEndOf="@id/titlesGuideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tipPercentageTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/standard_horizontal_margin"
-        android:gravity="center"
         android:text="Tip %:"
+        android:textAlignment="center"
         android:textSize="@dimen/normal_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tipPercentageEditText"
-        app:layout_constraintEnd_toStartOf="@id/tipPercentageEditText"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/titlesGuideline"
+        app:layout_constraintStart_toStartOf="@id/billAmountTitle"
         app:layout_constraintTop_toTopOf="@id/tipPercentageEditText" />
 
     <EditText
         android:id="@+id/tipPercentageEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/standard_horizontal_margin"
         android:layout_marginTop="@dimen/standard_vertical_margin"
-        android:layout_marginEnd="@dimen/standard_horizontal_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tipPercentageTitle"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/billAmountEditText"
+        app:layout_constraintStart_toStartOf="@id/billAmountEditText"
         app:layout_constraintTop_toBottomOf="@id/billAmountEditText" />
 
     <TextView
@@ -106,12 +105,11 @@
         app:layout_constraintTop_toBottomOf="@id/totalAmountTitle"
         tools:text="$23.00" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titlesGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="end"
-        app:constraint_referenced_ids="tipPercentageTitle,billAmountTitle"
-        tools:layout_editor_absoluteX="411dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
