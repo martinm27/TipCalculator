@@ -5,10 +5,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
-
-private const val DEFAULT_EDIT_TEXT_VALUE = 0.0
-private const val HUNDRED_PERCENT_DENOMINATOR = 100
-private const val DOLLAR_SIGN = "$"
+import com.acutisbits.tipcalculator.utils.DEFAULT_EDIT_TEXT_VALUE
+import com.acutisbits.tipcalculator.utils.DOLLAR_SIGN
+import com.acutisbits.tipcalculator.utils.HUNDRED_PERCENT_DENOMINATOR
 
 class MainActivity : AppCompatActivity() {
 
